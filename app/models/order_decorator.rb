@@ -2,7 +2,13 @@ module Spree
   Order.class_eval do
 
     attr_accessible :added_credits_amount
-    before_save :add_users_credit, :if => "self.user.present?"
+
+    def finalize_with_add_users_credit!
+      add_users_credit
+      finalize_without_add_users_credit!
+    end
+
+    alias_method_chain :finalize!, :add_users_credit
 
     private
 
