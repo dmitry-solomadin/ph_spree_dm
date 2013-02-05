@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205114544) do
+ActiveRecord::Schema.define(:version => 20130205134313) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -228,6 +228,7 @@ ActiveRecord::Schema.define(:version => 20130205114544) do
     t.string   "payment_state"
     t.string   "email"
     t.text     "special_instructions"
+    t.decimal  "added_credits_amount"
   end
 
   add_index "spree_orders", ["number"], :name => "index_spree_orders_on_number"
