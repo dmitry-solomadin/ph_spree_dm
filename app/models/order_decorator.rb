@@ -10,7 +10,7 @@ module Spree
 
     def valid_credits?
       if Spree::Config[:ph_store_credit_minimum] and self.item_total < Spree::Config[:ph_store_credit_minimum].to_f and self.store_credit_amount > 0
-        self.errors[:base] <<  "Order's item total is less than the minimum allowed (#{Spree::Config[:ph_store_credit_minimum].to_f}) to use store credit."
+        self.errors[:base] <<  "Order's item total is less than the minimum allowed (#{Spree::Config[:ph_store_credit_minimum].to_f.round(0)}) to use store credit."
         return false
       end
       return true
