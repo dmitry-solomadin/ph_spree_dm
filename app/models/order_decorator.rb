@@ -3,6 +3,8 @@ module Spree
 
     attr_accessible :added_credits_amount
 
+    Spree::Order.state_machine.before_transition :from => :payment,
+                                                 :do => :valid_credits?
     Spree::Order.state_machine.before_transition :to => :complete,
                                                  :do => :valid_credits?
 
