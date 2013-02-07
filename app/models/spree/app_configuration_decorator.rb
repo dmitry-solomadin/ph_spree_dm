@@ -1,0 +1,1 @@
+Spree::Config.use_store_credit_minimum = 30.0
