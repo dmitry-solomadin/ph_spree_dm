@@ -26,7 +26,14 @@ module Spree
     private
 
     def add_users_credit
-      self.added_credits_amount = (self.total / 10).round
+      credit_rate = Spree::Config[:ph_store_credit_rate].to_f
+      bonus_minimum = Spree::Config[:ph_store_credit_bonus_minimum].to_f
+      bonus_rate = Spree::Config[:ph_store_credit_bonus_rate].to_f
+
+      self.added_credits_amount = (self.total * credit_rate).round
+      if self.total > bonus_minimum
+        self.added_credits_amount += self.total * bonus_rate
+      end
       user.store_credits.create :amount => self.added_credits_amount,
                                 :remaining_amount => self.added_credits_amount,
                                 :reason => "For purchasing products."
