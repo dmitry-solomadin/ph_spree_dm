@@ -32,7 +32,7 @@ module Spree
 
       self.added_credits_amount = (self.total * credit_rate).round
       if self.total > bonus_minimum
-        self.added_credits_amount += self.total * bonus_rate
+        self.added_credits_amount += (self.total * bonus_rate).round
       end
       user.store_credits.create :amount => self.added_credits_amount,
                                 :remaining_amount => self.added_credits_amount,
