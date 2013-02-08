@@ -26,9 +26,9 @@ module Spree
     private
 
     def add_users_credit
-      credit_rate = Spree::Config[:ph_store_credit_rate].to_f
+      credit_rate = Spree::Config[:ph_store_credit_rate].to_f / 10
       bonus_minimum = Spree::Config[:ph_store_credit_bonus_minimum].to_f
-      bonus_rate = Spree::Config[:ph_store_credit_bonus_rate].to_f
+      bonus_rate = Spree::Config[:ph_store_credit_bonus_rate].to_f / 100
 
       self.added_credits_amount = (self.total * credit_rate).round
       if self.total > bonus_minimum

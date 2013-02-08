@@ -3,6 +3,6 @@ en:
     confirm_email:
       added_credits: "You earned %{earned} credits for this order"
   store_credits_total: "Store credits (total):"
-  ph_store_credit_rate: "Store credits rate"
+  ph_store_credit_rate: "Store credits rate  (credits received per %{per_amount})"
   ph_store_credit_bonus_minimum: "Bonus minimum"
-  ph_store_credit_bonus_rate: "Bonus rate"
+  ph_store_credit_bonus_rate: "Bonus rate (credits received per %{per_amount})"

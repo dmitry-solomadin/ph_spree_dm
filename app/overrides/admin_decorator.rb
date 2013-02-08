@@ -23,7 +23,7 @@ Deface::Override.new(:virtual_path => "spree/admin/general_settings/show",
                      :insert_bottom => "[data-hook='preferences']",
                      :text => "
 <tr>
-    <th scope=\"row\"><%= t(\"ph_store_credit_rate\") %>:</th>
+    <th scope=\"row\"><%= t(\"ph_store_credit_rate\", per_amount: money(10)) %>:</th>
     <td><%= Spree::Config[:ph_store_credit_rate] %></td>
 </tr>")
 
@@ -32,7 +32,7 @@ Deface::Override.new(:virtual_path => "spree/admin/general_settings/edit",
                      :insert_bottom => "fieldset#preferences",
                      :text => "
   <p>
-	<label><%= t(\"ph_store_credit_rate\") %></label>
+	<label><%= t(\"ph_store_credit_rate\", per_amount: money(10)) %></label>
 	<%= text_field_tag('ph_store_credit_rate', Spree::Config[:ph_store_credit_rate]) %>
   </p>")
 
@@ -61,7 +61,7 @@ Deface::Override.new(:virtual_path => "spree/admin/general_settings/show",
                      :insert_bottom => "[data-hook='preferences']",
                      :text => "
 <tr>
-    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_rate\") %>:</th>
+    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_rate\", per_amount: money(100)) %>:</th>
     <td><%= Spree::Config[:ph_store_credit_bonus_rate] %></td>
 </tr>")
 
@@ -70,7 +70,7 @@ Deface::Override.new(:virtual_path => "spree/admin/general_settings/edit",
                      :insert_bottom => "fieldset#preferences",
                      :text => "
   <p>
-	<label><%= t(\"ph_store_credit_bonus_rate\") %></label>
+	<label><%= t(\"ph_store_credit_bonus_rate\", per_amount: money(100)) %></label>
 	<%= text_field_tag('ph_store_credit_bonus_rate', Spree::Config[:ph_store_credit_bonus_rate]) %>
   </p>")
 
