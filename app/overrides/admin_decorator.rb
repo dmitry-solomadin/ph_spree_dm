@@ -36,42 +36,42 @@ Deface::Override.new(:virtual_path => "spree/admin/general_settings/edit",
 	<%= text_field_tag('ph_store_credit_rate', Spree::Config[:ph_store_credit_rate]) %>
   </p>")
 
-#Bonus Minimum
+#Bonus Per Each
 Deface::Override.new(:virtual_path => "spree/admin/general_settings/show",
-                     :name => "ph_store_credit_bonus_minimum",
+                     :name => "ph_store_credit_bonus_per_each",
                      :insert_bottom => "[data-hook='preferences']",
                      :text => "
 <tr>
-    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_minimum\") %>:</th>
-    <td><%= Spree::Config[:ph_store_credit_bonus_minimum] %></td>
+    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_per_each\") %>:</th>
+    <td><%= Spree::Config[:ph_store_credit_bonus_per_each] %></td>
 </tr>")
 
 Deface::Override.new(:virtual_path => "spree/admin/general_settings/edit",
-                     :name => "ph_store_credit_bonus_minimum_edit",
+                     :name => "ph_store_credit_bonus_per_each_edit",
                      :insert_bottom => "fieldset#preferences",
                      :text => "
   <p>
-	<label><%= t(\"ph_store_credit_bonus_minimum\") %></label>
-	<%= text_field_tag('ph_store_credit_bonus_minimum', Spree::Config[:ph_store_credit_bonus_minimum]) %>
+	<label><%= t(\"ph_store_credit_bonus_per_each\") %></label>
+	<%= text_field_tag('ph_store_credit_bonus_per_each', Spree::Config[:ph_store_credit_bonus_per_each]) %>
   </p>")
 
-#Bouns Rate
+#Bouns Amount
 Deface::Override.new(:virtual_path => "spree/admin/general_settings/show",
-                     :name => "ph_store_credit_bonus_rate",
+                     :name => "ph_store_credit_bonus_amount",
                      :insert_bottom => "[data-hook='preferences']",
                      :text => "
 <tr>
-    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_rate\", per_amount: money(100)) %>:</th>
-    <td><%= Spree::Config[:ph_store_credit_bonus_rate] %></td>
+    <th scope=\"row\"><%= t(\"ph_store_credit_bonus_amount\") %>:</th>
+    <td><%= Spree::Config[:ph_store_credit_bonus_amount] %></td>
 </tr>")
 
 Deface::Override.new(:virtual_path => "spree/admin/general_settings/edit",
-                     :name => "ph_store_credit_bonus_rate_edit",
+                     :name => "ph_store_credit_bonus_amount_edit",
                      :insert_bottom => "fieldset#preferences",
                      :text => "
   <p>
-	<label><%= t(\"ph_store_credit_bonus_rate\", per_amount: money(100)) %></label>
-	<%= text_field_tag('ph_store_credit_bonus_rate', Spree::Config[:ph_store_credit_bonus_rate]) %>
+	<label><%= t(\"ph_store_credit_bonus_amount\") %></label>
+	<%= text_field_tag('ph_store_credit_bonus_amount', Spree::Config[:ph_store_credit_bonus_amount]) %>
   </p>")
 
 
